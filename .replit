@@ -1,9 +1,0 @@
-run = "bash setup-replit.sh && php artisan serve --host=0.0.0.0 --port=8080"
-modules = ["web", "bash"]
-
-[languages.php]
-pattern = "**/*.php"
-syntax = "php"
-
-[env]
-PHP_VERSION = "8.2"
