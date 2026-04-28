@@ -10,8 +10,18 @@ echo -e "${BLUE}========================================${NC}"
 echo -e "${BLUE}🚀 AI Sales Page Generator Setup${NC}"
 echo -e "${BLUE}========================================${NC}\n"
 
+# Step 0: Install Composer
+echo -e "${BLUE}[0/6]${NC} Installing Composer..."
+curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+if command -v composer &> /dev/null; then
+    echo -e "${GREEN}✓ Composer installed successfully${NC}\n"
+else
+    echo -e "${RED}✗ Composer installation failed${NC}"
+    exit 1
+fi
+
 # Step 1: Start MySQL
-echo -e "${BLUE}[1/5]${NC} Starting MySQL service..."
+echo -e "${BLUE}[1/6]${NC} Starting MySQL service..."
 service mysql start
 sleep 2
 if mysql -u root -e "SELECT 1" > /dev/null 2>&1; then
@@ -22,7 +32,7 @@ else
 fi
 
 # Step 2: Create Database
-echo -e "${BLUE}[2/5]${NC} Creating database..."
+echo -e "${BLUE}[2/6]${NC} Creating database..."
 mysql -u root -e "DROP DATABASE IF EXISTS laravel_db;"
 mysql -u root -e "CREATE DATABASE IF NOT EXISTS laravel_db DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;"
 if mysql -u root -e "USE laravel_db" > /dev/null 2>&1; then
@@ -33,12 +43,12 @@ else
 fi
 
 # Step 3: Copy .env.production to .env
-echo -e "${BLUE}[3/5]${NC} Setting up environment configuration..."
+echo -e "${BLUE}[3/6]${NC} Setting up environment configuration..."
 cp .env.production .env
 echo -e "${GREEN}✓ .env configured${NC}\n"
 
 # Step 4: Run Migrations
-echo -e "${BLUE}[4/5]${NC} Running database migrations..."
+echo -e "${BLUE}[4/6]${NC} Running database migrations..."
 php artisan migrate --force --no-interaction
 if [ $? -eq 0 ]; then
     echo -e "${GREEN}✓ Migrations completed successfully${NC}\n"
@@ -48,7 +58,7 @@ else
 fi
 
 # Step 5: Seed Database
-echo -e "${BLUE}[5/5]${NC} Seeding database with demo data..."
+echo -e "${BLUE}[5/6]${NC} Seeding database with demo data..."
 php artisan db:seed --no-interaction
 if [ $? -eq 0 ]; then
     echo -e "${GREEN}✓ Database seeded successfully${NC}\n"
