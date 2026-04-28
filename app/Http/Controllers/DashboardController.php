@@ -33,6 +33,8 @@ class DashboardController extends Controller
       ->sum('price');
     $lastMonthRevenue = SalesPage::whereYear('created_at', now()->subMonth()->year)
       ->whereMonth('created_at', now()->subMonth()->month)
+      ->sum('price');
+
     $growthPercentage = $lastMonthRevenue > 0
       ? round((($thisMonthRevenue - $lastMonthRevenue) / $lastMonthRevenue) * 100, 2)
       : 0;
