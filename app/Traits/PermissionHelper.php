@@ -4,37 +4,8 @@ namespace App\Traits;
 
 use Illuminate\Support\Facades\Gate;
 
-/**
- * PermissionHelper Trait
- * 
- * Provides convenient methods for permission checking and authorization
- * throughout the application.
- * 
- * Usage in Controllers:
- * 
- *   class UserController extends Controller
- *   {
- *       use PermissionHelper;
- *       
- *       public function index()
- *       {
- *           $this->checkPermission('view users');
- *           // OR use the enum
- *           $this->checkPermission(\App\Enums\Permission::VIEW_USERS);
- *       }
- *   }
- * 
- * Usage in Blade:
- * 
- *   @if(auth()->user()->hasAnyPermission('view users', 'edit users'))
- *       <!-- Show content -->
- *   @endif
- */
 trait PermissionHelper
 {
-  /**
-   * Convert Permission enum to string if needed
-   */
   private function toPermissionString($permission): string
   {
     return $permission instanceof \App\Enums\Permission
@@ -42,13 +13,6 @@ trait PermissionHelper
       : (string)$permission;
   }
 
-  /**
-   * Check if user has permission, abort if not
-   * 
-   * @param string|\App\Enums\Permission $permission Permission name or Enum value
-   * @param int $statusCode HTTP status code (default 403)
-   * @return void
-   */
   protected function checkPermission($permission, int $statusCode = 403): void
   {
     $permissionString = $this->toPermissionString($permission);
@@ -58,12 +22,6 @@ trait PermissionHelper
     }
   }
 
-  /**
-   * Check if user has any of the given permissions
-   * 
-   * @param array|string|\App\Enums\Permission $permissions Permission names or Enum values
-   * @return bool
-   */
   protected function hasAnyPermission($permissions): bool
   {
     $permissions = is_array($permissions) ? $permissions : [$permissions];
@@ -78,12 +36,6 @@ trait PermissionHelper
     return false;
   }
 
-  /**
-   * Check if user has all of the given permissions
-   * 
-   * @param array|string|\App\Enums\Permission $permissions Permission names or Enum values
-   * @return bool
-   */
   protected function hasAllPermissions($permissions): bool
   {
     $permissions = is_array($permissions) ? $permissions : [$permissions];

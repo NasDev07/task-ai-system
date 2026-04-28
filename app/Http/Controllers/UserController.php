@@ -13,28 +13,20 @@ class UserController extends Controller
 {
   use PermissionHelper;
 
-  /**
-   * Display a listing of all users with optimized queries
-   * Prevents N+1 query problem with eager loading
-   * Supports search, filtering, and sorting
-   */
   public function index(Request $request)
   {
     $this->checkPermission(Permission::VIEW_USERS);
 
     $query = User::with('roles')->orderBy('created_at', 'desc');
 
-    // Filter by role
     if ($request->filled('role')) {
       $query->whereHas('roles', fn(Builder $q) => $q->where('name', $request->role));
     }
 
-    // Filter by status
     if ($request->filled('status')) {
       $query->where('is_active', $request->status === 'active');
     }
 
-    // Search by name, email, or phone
     if ($request->filled('search')) {
       $search = "%{$request->search}%";
       $query->where(function (Builder $q) use ($search) {
@@ -50,9 +42,6 @@ class UserController extends Controller
     return view('users.index', compact('users', 'roles'));
   }
 
-  /**
-   * Show the form for creating a new user
-   */
   public function create()
   {
     $this->checkPermission(Permission::CREATE_USERS);
@@ -60,10 +49,6 @@ class UserController extends Controller
     return view('users.create', compact('roles'));
   }
 
-  /**
-   * Store a newly created user in database
-   * With validation, role assignment, and profile initialization
-   */
   public function store(Request $request)
   {
     $this->checkPermission(Permission::CREATE_USERS);
@@ -114,9 +99,6 @@ class UserController extends Controller
     return view('users.show', compact('user'));
   }
 
-  /**
-   * Show the form for editing the specified user
-   */
   public function edit(User $user)
   {
     $this->checkPermission(Permission::EDIT_USERS);
@@ -125,10 +107,6 @@ class UserController extends Controller
     return view('users.edit', compact('user', 'roles'));
   }
 
-  /**
-   * Update the specified user in database
-   * With validation, role sync, and audit trail preparation
-   */
   public function update(Request $request, User $user)
   {
     $this->checkPermission(Permission::EDIT_USERS);
@@ -165,7 +143,6 @@ class UserController extends Controller
 
     $user->update($updateData);
 
-    // Sync roles using proper Role models
     $roles = Role::whereIn('id', $validated['roles'])->get();
     $user->syncRoles($roles);
 
@@ -173,15 +150,10 @@ class UserController extends Controller
       ->with('success', "User '{$user->name}' updated successfully!");
   }
 
-  /**
-   * Remove the specified user from database
-   * Prevents self-deletion and audits the action
-   */
   public function destroy(User $user)
   {
     $this->checkPermission(Permission::DELETE_USERS);
 
-    // Prevent self-deletion
     if (auth()->id() === $user->id) {
       return back()->withErrors(['error' => 'You cannot delete your own account!']);
     }
@@ -193,9 +165,6 @@ class UserController extends Controller
       ->with('success', "User '{$userName}' deleted successfully!");
   }
 
-  /**
-   * Bulk toggle user status (active/inactive)
-   */
   public function bulkToggleStatus(Request $request)
   {
     $this->checkPermission(Permission::BULK_EDIT_USERS);
