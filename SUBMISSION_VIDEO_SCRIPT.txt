@@ -1,0 +1,338 @@
+================================================================================
+VIDEO WALKTHROUGH SCRIPT - AI SALES PAGE GENERATOR
+Duration: 8-10 minutes
+Platform: YouTube (Public or Unlisted)
+================================================================================
+
+INTRO (0:00 - 0:45)
+================================================================================
+
+[Show homepage with title visible]
+
+NARRATION:
+"Hi! This is a demonstration of the AI Sales Page Generator - a web application
+that uses artificial intelligence to transform product information into 
+professional, conversion-optimized sales pages in just minutes.
+
+In this walkthrough, I'll show you:
+- How to register and log in
+- The product input form
+- AI-powered page generation
+- Preview and customization
+- How to export your pages
+- And how to manage your entire sales page library
+
+Let's get started!"
+
+ACTION: Show homepage, scroll to see main features
+
+
+SECTION 1: REGISTRATION (0:45 - 2:00)
+================================================================================
+
+[Navigate to Register page]
+
+NARRATION:
+"First, let's register a new account. I'll click the Register link..."
+
+ACTIONS:
+1. Click "Register" link
+2. Show registration form
+3. Fill in fields:
+   - Name: "Demo User"
+   - Email: "demo@example.com"
+   - Password: "DemoPass123456"
+   - Confirm Password: "DemoPass123456"
+4. Click "Register" button
+5. Show success message/redirect
+
+NARRATION:
+"The registration is straightforward - just name, email, and a secure password.
+Once registered, the system creates your account and you can immediately 
+start creating sales pages."
+
+
+SECTION 2: LOGIN (2:00 - 2:45)
+================================================================================
+
+[Go to login page]
+
+NARRATION:
+"For this demonstration, I'll log in with a pre-configured admin account that
+has sample data already set up."
+
+ACTIONS:
+1. Click "Login" link (or navigate to /login)
+2. Enter credentials:
+   - Email: "admin@example.com"
+   - Password: "password123"
+3. Click "Login" button
+4. Show dashboard after successful login
+
+NARRATION:
+"And we're in! You'll see the dashboard which shows your sales pages, metrics,
+and quick access to create new pages."
+
+
+SECTION 3: DASHBOARD OVERVIEW (2:45 - 3:45)
+================================================================================
+
+[Show dashboard/home page]
+
+NARRATION:
+"Here's what you see after logging in. The dashboard shows an overview of your
+account. If you're an admin, you'll see system metrics. Regular users see their
+sales pages and quick-access menu for creating new ones.
+
+The left sidebar gives you easy access to all main features:
+- Create a new sales page
+- View your sales page history
+- Access your profile
+- And admin tools if you have admin privileges"
+
+ACTIONS:
+1. Point out dashboard sections
+2. Show sidebar navigation
+3. Highlight "Create New" or "Sales Pages" option
+
+
+SECTION 4: CREATE SALES PAGE FORM (3:45 - 6:00)
+================================================================================
+
+[Click to create new sales page]
+
+NARRATION:
+"Now, the core feature - creating a sales page. Let me click 'Create New'
+to open the product input form."
+
+ACTIONS:
+1. Click "Create New" in sidebar or menu
+2. Show blank form with fields
+
+NARRATION:
+"Here's the product form. I need to fill in 6 pieces of information about my
+product or service. Let me demonstrate with a real example - a software tool."
+
+ACTIONS:
+3. Fill in the form fields with example data:
+
+FIELD 1 - Product Name:
+"Professional Project Management Software"
+
+FIELD 2 - Description:
+"Cloud-based project management platform designed for remote teams. Features 
+real-time collaboration, automated workflows, and comprehensive reporting tools. 
+Perfect for agencies, tech startups, and distributed teams."
+
+FIELD 3 - Features:
+"Real-time Collaboration, Automated Workflows, Time Tracking, Gantt Charts, 
+Resource Management, Custom Dashboards, API Integration, Mobile App"
+
+FIELD 4 - Target Audience:
+"Project Managers, Tech Startups, Remote Teams, Digital Agencies, Enterprises, 
+Technical Leaders"
+
+FIELD 5 - Price:
+"99.99"
+
+FIELD 6 - Unique Selling Point:
+"Industry's first AI-powered project prediction that learns from your team's 
+patterns and predicts project delays with 94% accuracy"
+
+NARRATION:
+"Once I've filled in all the details about my product, I select a design template.
+I can choose from 5 different styles - Modern, Minimalist, Bold, Corporate, 
+or Startup. I'll select Modern."
+
+ACTIONS:
+4. Select template from dropdown (e.g., "Modern")
+5. Click "Generate Sales Page" button
+6. Show loading spinner/animation
+
+NARRATION:
+"Now I click Generate, and the AI goes to work. It's connecting to the Google
+Gemini API and creating a complete, persuasive sales page from this information.
+This typically takes 20-45 seconds."
+
+ACTIONS:
+7. Wait for generation to complete (show the loading animation)
+8. Page generation completes successfully
+
+
+SECTION 5: PREVIEW GENERATED PAGE (6:00 - 7:30)
+================================================================================
+
+[Show the generated sales page]
+
+NARRATION:
+"Excellent! The AI has generated a complete sales page. Look at this - it's 
+professional, well-structured, and ready to use. Let me scroll through and 
+show you what was created."
+
+ACTIONS:
+1. Show headline section
+NARRATION: "First, a compelling headline that focuses on the key benefit..."
+
+2. Scroll to sub-headline
+NARRATION: "A sub-headline that supports the main message..."
+
+3. Show benefits section
+NARRATION: "A benefits section that speaks to the target audience's pain points..."
+
+4. Show features breakdown
+NARRATION: "Detailed features breakdown showing what the product offers..."
+
+5. Show social proof section
+NARRATION: "Social proof section with testimonials and credibility markers..."
+
+6. Show pricing display
+NARRATION: "Clear pricing presentation with call-to-action..."
+
+7. Show call-to-action section
+NARRATION: "And a powerful call-to-action button to drive conversions..."
+
+NARRATION:
+"Everything is responsive and looks great on mobile, tablet, and desktop.
+The styling matches the template I selected earlier."
+
+
+SECTION 6: REGENERATE SECTION (7:30 - 8:15)
+================================================================================
+
+[Show regenerate buttons on preview]
+
+NARRATION:
+"Here's a powerful feature - you can regenerate individual sections. If you
+don't like the headline the AI created, you can regenerate just that section
+without touching the rest of the page."
+
+ACTIONS:
+1. Click regenerate button on headline section
+2. Show loading animation
+3. Headline updates with new content
+
+NARRATION:
+"See how the headline changed while everything else stayed the same? This
+lets you fine-tune the page without starting over. You can do this for any
+section - the headline, the CTA, the benefits - whatever you want to adjust."
+
+
+SECTION 7: EXPORT AS HTML (8:15 - 8:50)
+================================================================================
+
+[Show export button]
+
+NARRATION:
+"When you're happy with your sales page, you can export it as a standalone
+HTML file. This is great for deploying on your own server, sharing with
+clients, or testing different versions."
+
+ACTIONS:
+1. Click "Export as HTML" button
+2. Browser downloads file
+3. File saves as "[product-name]_sales_page.html"
+
+NARRATION:
+"The downloaded file is complete and self-contained - all the CSS and styles
+are built in. You can open it in any browser, anywhere, without needing a
+server. It's production-ready."
+
+
+SECTION 8: VIEW HISTORY & MANAGEMENT (8:50 - 9:35)
+================================================================================
+
+[Navigate to History page]
+
+NARRATION:
+"All your generated pages are automatically saved. Let me show you the History
+page where you can manage all your sales pages."
+
+ACTIONS:
+1. Click "Sales Pages" in sidebar
+2. Click "History"
+3. Show list of all saved pages
+
+NARRATION:
+"Here's your library of generated pages. You can:
+- Search by product name
+- View any page
+- Re-edit and regenerate pages
+- Delete pages you no longer need
+- Export any page as HTML
+
+Each page is timestamped so you can see when it was created. Your data is
+always safe and accessible."
+
+ACTIONS:
+4. Show search functionality (if available)
+5. Show pagination if there are multiple pages
+
+
+SECTION 9: KEY FEATURES SUMMARY (9:35 - 10:00)
+================================================================================
+
+NARRATION:
+"Let me summarize the key features of this AI Sales Page Generator:
+
+✓ AI-Powered Content - Uses Google's advanced Gemini API
+✓ Professional Templates - Choose from 5 beautiful design styles
+✓ Structured Output - Creates 7 key sections automatically
+✓ Section Regeneration - Fine-tune individual parts
+✓ Export to HTML - Standalone files you can use anywhere
+✓ Complete History - All your pages saved and searchable
+✓ User-Friendly - No technical skills needed
+✓ Responsive Design - Looks perfect on all devices
+
+The entire system is built with Laravel, uses cutting-edge AI technology,
+and is deployed on secure, reliable hosting.
+
+You can try it yourself at: https://task-syste-ai--nasstaiko.replit.app/
+
+Login with: admin@example.com / password123
+
+Thank you for watching!"
+
+ACTIONS:
+1. Show main URL on screen
+2. Show GitHub link
+3. End with thank you message
+
+
+================================================================================
+RECORDING TIPS:
+================================================================================
+
+AUDIO:
+- Speak clearly and naturally
+- Use a quiet environment
+- Moderate pace - not too fast, not too slow
+- Let silence exist during AI processing (shows it's working)
+
+VIDEO:
+- Record at 1080p or higher
+- Move mouse slowly and deliberately
+- Highlight important buttons and sections
+- Show error handling if something fails
+
+TIMING:
+- Aim for 9-10 minutes total
+- Allow 2-3 seconds for actions to complete
+- Don't rush the AI generation - let viewers see it happening
+
+EDITING:
+- Keep cuts minimal and natural
+- Add captions for key features (optional)
+- Include intro and outro with background music (optional)
+- Remove long pauses between actions
+
+UPLOAD:
+- Save as MP4 or similar format
+- Upload to YouTube
+- Make Public or Unlisted
+- Add description with:
+  * Live URL
+  * GitHub link
+  * Demo credentials
+  * Brief summary
+
+================================================================================
