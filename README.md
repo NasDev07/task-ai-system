@@ -27,11 +27,13 @@ Generate professional sales landing pages using Google Gemini AI in seconds. Per
 ## ✨ Features
 
 ### Dashboard
+
 - System overview
 - Real-time statistics
 - Quick access to features
 
 ### Sales Pages (Main Feature)
+
 - **AI-Powered Generation**: Create complete sales pages using Google Gemini
 - **Smart Preview**: View rendered landing page in real-time
 - **Easy Editing**: Regenerate entire page or specific sections
@@ -40,18 +42,21 @@ Generate professional sales landing pages using Google Gemini AI in seconds. Per
 - **Product Management**: Organize sales pages by product
 
 ### User Management (Admin/Manager Only)
+
 - View all users with detailed information
 - Add new team members
 - Assign and manage roles
 - Track user activity
 
 ### User Profile
+
 - Edit personal information
 - Change password securely
 - Update account settings
 - View profile completion
 
 ### Role-Based Access Control
+
 - **Admin**: Full system access
 - **Manager**: User and sales page management
 - **User**: Personal sales page creation
@@ -60,22 +65,23 @@ Generate professional sales landing pages using Google Gemini AI in seconds. Per
 
 ## 🔧 Technology Stack
 
-| Component | Technology | Version |
-|-----------|-----------|---------|
-| **Backend** | Laravel | 13.6.0 |
-| **Database** | MySQL | 8.0+ |
-| **PHP** | PHP | 8.3+ |
-| **Frontend** | Bootstrap | 5.3 |
-| **Templating** | Blade | - |
-| **AI** | Google Gemini | 3 Flash Preview |
-| **Authentication** | Laravel Auth | Built-in |
-| **Authorization** | Spatie Permissions | Latest |
+| Component          | Technology         | Version         |
+| ------------------ | ------------------ | --------------- |
+| **Backend**        | Laravel            | 13.6.0          |
+| **Database**       | MySQL              | 8.0+            |
+| **PHP**            | PHP                | 8.3+            |
+| **Frontend**       | Bootstrap          | 5.3             |
+| **Templating**     | Blade              | -               |
+| **AI**             | Google Gemini      | 3 Flash Preview |
+| **Authentication** | Laravel Auth       | Built-in        |
+| **Authorization**  | Spatie Permissions | Latest          |
 
 ---
 
 ## 🚀 Quick Start
 
 ### Prerequisites
+
 - PHP 8.3 or higher
 - MySQL 8.0 or higher
 - Composer
@@ -142,6 +148,7 @@ php artisan migrate --seed
 ```
 
 This will:
+
 - Create all database tables
 - Seed demo users and roles
 - Setup permissions
@@ -167,10 +174,10 @@ Server runs at: `http://localhost:8000`
 
 Use these to test the application:
 
-| Role    | Email               | Password    | Access Level |
-|---------|-------------------|-------------|-------------|
-| Admin   | admin@example.com   | password123 | Full System |
-| Manager | manager@example.com | password123 | Users + Pages |
+| Role    | Email               | Password    | Access Level   |
+| ------- | ------------------- | ----------- | -------------- |
+| Admin   | admin@example.com   | password123 | Full System    |
+| Manager | manager@example.com | password123 | Users + Pages  |
 | User    | user@example.com    | password123 | Personal Pages |
 
 ---
@@ -180,15 +187,18 @@ Use these to test the application:
 Follow these steps to test the complete workflow:
 
 ### 1. Login
+
 ```
 Email: user@example.com
 Password: password123
 ```
 
 ### 2. Navigate to Sales Pages
+
 Click "Sales Pages" → "Create New"
 
 ### 3. Fill Product Details
+
 - **Product Name**: E.g., "Premium Email Marketing Software"
 - **Description**: Brief description of your product
 - **Features**: List key features (comma-separated)
@@ -197,7 +207,9 @@ Click "Sales Pages" → "Create New"
 - **Unique Selling Point**: What makes it special?
 
 ### 4. Generate with AI
+
 Click "Generate Page" - Gemini AI will create:
+
 - Compelling headline
 - Engaging subheadline
 - Benefit statements
@@ -207,18 +219,23 @@ Click "Generate Page" - Gemini AI will create:
 - Call-to-action button
 
 ### 5. Preview Results
+
 View rendered landing page with:
+
 - Professional styling
 - Responsive design
 - Mobile-friendly layout
 
 ### 6. Export HTML
+
 Click "Export" to download ready-to-use HTML file
 
 ### 7. Regenerate (Optional)
+
 Edit product details and click "Generate" again
 
 ### 8. View History
+
 Browse all previously created sales pages
 
 ---
@@ -226,6 +243,7 @@ Browse all previously created sales pages
 ## 📁 Database Schema
 
 ### Users Table
+
 ```
 Columns:
 - id (primary key)
@@ -243,6 +261,7 @@ Relationships:
 ```
 
 ### Sales_Pages Table
+
 ```
 Columns:
 - id (primary key)
@@ -260,6 +279,7 @@ Relationships:
 ```
 
 ### Roles Table
+
 ```
 Columns:
 - id, name, guard_name
@@ -272,6 +292,7 @@ Predefined Roles:
 ```
 
 ### Permissions Table
+
 ```
 Columns:
 - id, name, guard_name
@@ -284,6 +305,7 @@ Sample Permissions:
 ```
 
 ### Role & Permission Pivot Tables
+
 ```
 - model_has_roles (links Users to Roles)
 - model_has_permissions (links Users to Permissions)
@@ -297,6 +319,7 @@ Sample Permissions:
 Copy `.env.example` to `.env` and configure these key variables:
 
 ### Application
+
 ```env
 APP_NAME="AI Sales Page Generator"
 APP_ENV=local                          # local, staging, production
@@ -306,6 +329,7 @@ APP_URL=http://localhost               # Your application URL
 ```
 
 ### Database
+
 ```env
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
@@ -316,12 +340,14 @@ DB_PASSWORD=                           # Leave empty if no password
 ```
 
 ### Google Gemini API
+
 ```env
 GEMINI_API_KEY=your_api_key_here       # Get from https://aistudio.google.com/apikey
 GEMINI_MODEL=gemini-3-flash-preview    # Model to use
 ```
 
 ### Session & Cache
+
 ```env
 SESSION_DRIVER=database                # Database-backed sessions
 SESSION_LIFETIME=120                   # Minutes
@@ -329,6 +355,7 @@ CACHE_STORE=database                   # Database-backed cache
 ```
 
 ### Queue & Jobs
+
 ```env
 QUEUE_CONNECTION=database              # Use database for queued jobs
 ```
@@ -338,6 +365,7 @@ QUEUE_CONNECTION=database              # Use database for queued jobs
 ## 🐛 Troubleshooting
 
 ### Database Connection Error
+
 ```bash
 # Check MySQL is running
 mysql -u root -e "SHOW DATABASES;"
@@ -350,6 +378,7 @@ php artisan migrate:fresh --seed
 ```
 
 ### Migrations Fail
+
 ```bash
 # Reset and try again
 php artisan migrate:reset --force
@@ -360,12 +389,14 @@ php artisan migrate:fresh --seed
 ```
 
 ### Gemini API Errors
+
 - ✅ Verify API key in `.env` is correct
 - ✅ Check API quota hasn't been exceeded
 - ✅ Verify internet connection
 - ✅ Check error logs: `storage/logs/laravel.log`
 
 ### Assets Not Loading
+
 ```bash
 # Clear cache and rebuild assets
 php artisan cache:clear
@@ -377,6 +408,7 @@ npm run dev
 ```
 
 ### Permissions Error
+
 ```bash
 # Fix storage directory permissions
 chmod -R 775 storage bootstrap/cache
@@ -386,6 +418,7 @@ chmod -R 777 storage bootstrap/cache
 ```
 
 ### Class Not Found Error
+
 ```bash
 # Regenerate Composer autoloader
 composer dump-autoload
@@ -403,20 +436,20 @@ php artisan view:clear
 If you encounter issues:
 
 1. **Check Logs**: Review `storage/logs/laravel.log`
-2. **Clear Cache**: 
-   ```bash
-   php artisan cache:clear && php artisan view:clear
-   ```
+2. **Clear Cache**:
+    ```bash
+    php artisan cache:clear && php artisan view:clear
+    ```
 3. **Verify Setup**:
-   ```bash
-   php artisan config:cache
-   composer install
-   npm install
-   ```
+    ```bash
+    php artisan config:cache
+    composer install
+    npm install
+    ```
 4. **Database Reset** (Development Only):
-   ```bash
-   php artisan migrate:fresh --seed
-   ```
+    ```bash
+    php artisan migrate:fresh --seed
+    ```
 
 ---
 
